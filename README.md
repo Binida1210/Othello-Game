@@ -23,7 +23,7 @@ To run the Othello game locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Binida1210/Othello-Game
    cd othello-app
    ```
 
