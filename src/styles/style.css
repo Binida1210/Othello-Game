@@ -34,6 +34,16 @@ body {
   color: var(--pixel-white);
 }
 
+/* Pixel hand cursor for interactive elements */
+body,
+button,
+.cell,
+.menu-btn,
+.first-btns button,
+.ok-cancel button {
+  cursor: url(./pixel-cursor.cur), pointer !important;
+}
+
 .container {
   display: flex;
   justify-content: center;
