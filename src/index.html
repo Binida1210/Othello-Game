@@ -11,19 +11,24 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="card settings" id="settings">
-        <h1>Othello</h1>
+    <div class="container" role="main">
+      <div
+        class="card settings"
+        id="settings"
+        role="region"
+        aria-label="Game Settings"
+      >
+        <h1 id="gameTitle">Othello</h1>
         <div class="row">
           <label for="mode">Game Mode:</label>
-          <select id="mode">
+          <select id="mode" aria-label="Select game mode">
             <option value="pvp">Player vs Player</option>
             <option value="pve">Player vs Computer</option>
           </select>
         </div>
         <div class="row" id="aiRow" style="display: none">
           <label for="aiLevel">AI Level:</label>
-          <select id="aiLevel">
+          <select id="aiLevel" aria-label="Select AI level">
             <option value="random">Random</option>
             <option value="greedy">Greedy</option>
           </select>
@@ -37,8 +42,12 @@
             max="12"
             step="2"
             value="8"
+            aria-valuemin="6"
+            aria-valuemax="12"
+            aria-valuenow="8"
+            aria-label="Board size"
           />
-          <span id="boardSizeVal">8</span>
+          <span id="boardSizeVal" aria-live="polite">8</span>
         </div>
         <div class="row">
           <label for="blockCount">Blocks:</label>
@@ -50,32 +59,57 @@
             step="1"
             value="0"
             class="pixel-range"
+            aria-valuemin="0"
+            aria-valuemax="16"
+            aria-valuenow="0"
+            aria-label="Number of blocks"
           />
-          <span id="blockCountVal">0</span>
+          <span id="blockCountVal" aria-live="polite">0</span>
         </div>
-        <div class="row first-btns">
-          <button id="blackFirst" class="selected">Black First</button>
-          <button id="whiteFirst">White First</button>
-          <button id="randomFirst">Random First</button>
+        <div
+          class="row first-btns"
+          role="group"
+          aria-label="Choose starting player"
+        >
+          <button id="blackFirst" class="selected" aria-pressed="true">
+            Black First
+          </button>
+          <button id="whiteFirst" aria-pressed="false">White First</button>
+          <button id="randomFirst" aria-pressed="false">Random First</button>
         </div>
-        <div class="row ok-cancel">
+        <div class="row ok-cancel" role="group" aria-label="Confirm or cancel">
           <button id="okBtn">OK</button>
           <button id="cancelBtn">Cancel</button>
         </div>
       </div>
-      <div class="game" id="game" style="display: none">
+      <div
+        class="game"
+        id="game"
+        style="display: none"
+        role="region"
+        aria-label="Game Area"
+      >
         <div class="game-area">
-          <div class="board" id="board"></div>
-          <div class="side-panel">
+          <div
+            class="board"
+            id="board"
+            role="grid"
+            aria-label="Othello board"
+          ></div>
+          <div
+            class="side-panel"
+            role="complementary"
+            aria-label="Game Information"
+          >
             <div class="top-info">
-              <div class="turn" id="turn"></div>
-              <div class="scoreboard" id="score"></div>
+              <div class="turn" id="turn" aria-live="polite"></div>
+              <div class="scoreboard" id="score" aria-live="polite"></div>
             </div>
-            <div class="controls">
+            <div class="controls" role="group" aria-label="Game controls">
               <button id="undoBtn" class="menu-btn">Undo</button>
               <button id="redoBtn" class="menu-btn">Redo</button>
             </div>
-            <div id="status"></div>
+            <div id="status" aria-live="polite"></div>
             <button class="menu-btn" id="backMenuBtn">Back to Menu</button>
           </div>
         </div>

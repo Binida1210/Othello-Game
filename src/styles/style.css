@@ -88,6 +88,11 @@ h1 {
   font-family: "Press Start 2P", monospace;
 }
 
+select {
+  padding: 6px 4px;
+  text-align: center;
+}
+
 input[type="range"] {
   flex: 2;
   accent-color: var(--pixel-cyan);
